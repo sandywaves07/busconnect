@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    min-width: 1024px;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.5;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-white rounded-xl border border-gray-200 shadow-sm;
+  }
+
+  .btn-primary {
+    @apply bg-bus-blue-700 hover:bg-bus-blue-800 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-150 text-sm;
+  }
+
+  .btn-secondary {
+    @apply bg-white hover:bg-gray-50 text-gray-700 px-4 py-2 rounded-lg font-medium border border-gray-300 transition-colors duration-150 text-sm;
+  }
+
+  .btn-outline-primary {
+    @apply border border-bus-blue-700 text-bus-blue-700 hover:bg-bus-blue-50 px-4 py-2 rounded-lg font-medium transition-colors duration-150 text-sm;
+  }
+
+  .input-field {
+    @apply w-full px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-bus-blue-500 focus:border-transparent transition-all;
+  }
+
+  .label {
+    @apply block text-sm font-medium text-gray-700 mb-1;
+  }
+
+  .post-type-job {
+    @apply border-l-4 border-bus-blue-600;
+  }
+
+  .post-type-marketplace {
+    @apply border-l-4 border-bus-orange-600;
+  }
+
+  .post-type-update {
+    @apply border-l-4 border-bus-green-600;
+  }
+
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg text-gray-600 hover:bg-bus-blue-50 hover:text-bus-blue-700 transition-colors cursor-pointer font-medium text-sm;
+  }
+
+  .nav-link.active {
+    @apply bg-bus-blue-50 text-bus-blue-700;
+  }
+
+  .badge-job {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-bus-blue-100 text-bus-blue-700;
+  }
+
+  .badge-marketplace {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-bus-orange-100 text-bus-orange-700;
+  }
+
+  .badge-update {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-xs font-medium bg-bus-green-100 text-bus-green-700;
+  }
+
+  .sidebar-fixed {
+    @apply sticky top-16 h-[calc(100vh-64px)] overflow-y-auto;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+/* Post card hover */
+.post-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Link hover underline */
+.hover-underline:hover {
+  text-decoration: underline;
+}
